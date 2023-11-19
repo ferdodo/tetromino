@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(61, 126, 195);
+}
+
+div {
+    user-select: none;
+}
+
+.success-zone {
+    border: 1px solid black;
+}
+
+.tetromino-block {
+    border: 1px solid black;
+    height: 100%;
+}
