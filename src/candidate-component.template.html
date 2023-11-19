@@ -1,0 +1,7 @@
+<template v-if="candidate">
+    <template v-for="candidateBlock in (candidateBlocks)">
+        <div :style="`grid-area: ${candidateBlock.y+1}/${candidateBlock.x+1}/${candidateBlock.y+2}/${candidateBlock.x+2}`">
+            <tetromino-block-component></tetromino-block-component>
+        </div>
+    </template>
+</template>

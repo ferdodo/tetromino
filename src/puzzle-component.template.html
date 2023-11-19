@@ -1,0 +1,28 @@
+<div style="display: grid; place-content:center">
+	<div class="game-zone" :style="`width: clamp(10rem, 80vw, 80rem); height: clamp(10rem, 40vw, 40rem); display: grid; grid-template-columns: repeat(${ puzzle.gameZone.w }, 1fr); grid-template-rows: repeat(${ puzzle.gameZone.h }, 1fr);`">
+		<div class="success-zone" :style="`grid-area: ${puzzle.successZone.x+1}/${puzzle.successZone.y+1}/${puzzle.successZone.x+puzzle.successZone.w+1}/${puzzle.successZone.h+puzzle.successZone.y+1}`"></div>
+		<div class="hand-zone" :style="`grid-area: ${puzzle.handZone.y+1}/${puzzle.handZone.x+1}/${puzzle.handZone.y+puzzle.handZone.h+1}/${puzzle.handZone.w+puzzle.handZone.x+1}`"></div>
+		
+		<template v-for="placedTetromino of puzzle.placed">
+			<placed-tetromino-block-component :id="placedTetromino.id" :blockIndex="0"></placed-tetromino-block-component>
+			<placed-tetromino-block-component :id="placedTetromino.id" :blockIndex="1"></placed-tetromino-block-component>
+			<placed-tetromino-block-component :id="placedTetromino.id" :blockIndex="2"></placed-tetromino-block-component>
+			<placed-tetromino-block-component :id="placedTetromino.id" :blockIndex="3"></placed-tetromino-block-component>
+		</template>
+		
+		<template v-for="(handTetromino, handIndex) of unplacedHandTetrominos" :key="`${handTetromino.id} ${handIndex}`">
+			<hand-tetromino-block-component :id="handTetromino.id" :handIndex="handIndex" :blockIndex="0"></hand-tetromino-block-component>
+			<hand-tetromino-block-component :id="handTetromino.id" :handIndex="handIndex" :blockIndex="1"></hand-tetromino-block-component>
+			<hand-tetromino-block-component :id="handTetromino.id" :handIndex="handIndex" :blockIndex="2"></hand-tetromino-block-component>
+			<hand-tetromino-block-component :id="handTetromino.id" :handIndex="handIndex" :blockIndex="3"></hand-tetromino-block-component>
+		</template>
+		
+		<candidate-component></candidate-component>
+
+		<template v-for="x in puzzle.gameZone.w">
+			<template v-for="y in puzzle.gameZone.h">
+				<mouse-detection-component :x="x" :y="y"></mouse-detection-component>
+			</template>
+		</template>
+	</div>
+</div>

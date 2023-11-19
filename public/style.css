@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(61, 126, 195);
+}
+
+div {
+    user-select: none;
+}
+
+.game-zone {
+    border: 1px solid black;
+}
+
+.success-zone {
+    border: 1px solid blue;
+}
+
+.hand-zone {
+    border: 1px solid rgb(60, 255, 0);
+}
+
+.placed-tetromino {
+    border: 1px solid black;
+}
+
+.tetromino-block {
+    box-shadow: inset 0px 0px 0px 2mm #f00;
+    height: 100%;
+}
