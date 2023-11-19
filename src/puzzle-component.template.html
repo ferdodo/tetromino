@@ -1,9 +1,9 @@
 <div style="display: grid; place-content:center">
-	<div class="game-zone" :style="`width: clamp(10rem, 80vw, 80rem); height: clamp(10rem, 40vw, 40rem); display: grid; grid-template-columns: repeat(${ puzzle.gameZone.w }, 1fr); grid-template-rows: repeat(${ puzzle.gameZone.h }, 1fr);`">
+	<div class="game-zone" :style="`width: clamp(10rem, 80vw, 40rem); height: clamp(12rem, 100vw, 50rem); display: grid; grid-template-columns: repeat(${ puzzle.gameZone.w }, 1fr); grid-template-rows: repeat(${ puzzle.gameZone.h }, 1fr);`">
 		<div class="success-zone" :style="`grid-area: ${puzzle.successZone.x+1}/${puzzle.successZone.y+1}/${puzzle.successZone.x+puzzle.successZone.w+1}/${puzzle.successZone.h+puzzle.successZone.y+1}`"></div>
 		<div class="hand-zone" :style="`grid-area: ${puzzle.handZone.y+1}/${puzzle.handZone.x+1}/${puzzle.handZone.y+puzzle.handZone.h+1}/${puzzle.handZone.w+puzzle.handZone.x+1}`"></div>
 		
-		<template v-for="placedTetromino of puzzle.placed">
+		<template v-for="(placedTetromino, index) of puzzle.placed" :key="`${placedTetromino.id} ${index}`">
 			<placed-tetromino-block-component :id="placedTetromino.id" :blockIndex="0"></placed-tetromino-block-component>
 			<placed-tetromino-block-component :id="placedTetromino.id" :blockIndex="1"></placed-tetromino-block-component>
 			<placed-tetromino-block-component :id="placedTetromino.id" :blockIndex="2"></placed-tetromino-block-component>

@@ -1,3 +1,5 @@
+import { getMoveCount } from "./current-puzzle";
+
 export function share() {
     const date = new Date();
     const year = date.getFullYear();
@@ -6,7 +8,7 @@ export function share() {
     const formattedDate = `${year}/${month}/${day}`;
     let text = `Tetromino ${formattedDate}`;
 
-    text += `\n\nPuzzle réussi avec X positionements.`
+    text += `\n\nPuzzle réussi avec ${ getMoveCount() } positionnements.`;
 
     text += `\n\nhttps://ferdodo.github.io/tetromino`;
     navigator.clipboard.writeText(text);

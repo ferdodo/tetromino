@@ -3,11 +3,18 @@ import { generatePuzzle } from './generate-puzzle';
 import { Subject } from 'rxjs';
 import { Block } from 'blockwise';
 import { PlacedTetromino } from './placed-tetromino';
+import { isPlacementLegal } from './isPlacementLegal';
 
 let puzzle = generatePuzzle();
 
 const _currentPuzzle$ = new Subject<Puzzle>();
 export const currentPuzzle$ = _currentPuzzle$.asObservable();
+
+let moveCount: number = 0;
+
+export function getMoveCount(): number {
+	return moveCount;
+}
 
 export function getCurrentPuzzle(): Puzzle {
     return puzzle;
@@ -36,6 +43,12 @@ export function placeCandidate() {
         return;
     }
 
+    if (!isPlacementLegal()) {
+        puzzle = { ...puzzle, candidate: null };
+        _currentPuzzle$.next(puzzle);
+        return;
+    }
+
     const candidate: PlacedTetromino = puzzle.candidate;
 
     puzzle = {
@@ -47,7 +60,16 @@ export function placeCandidate() {
         ]
     };
 
-    console.log(`Place candidate ${candidate.id} at ${JSON.stringify(candidate.block)}`)
+    _currentPuzzle$.next(puzzle);
+
+    moveCount++;
+}
+
+export function clearPlaced(id: number) {
+    puzzle = {
+        ...puzzle,
+        placed: puzzle.placed.filter(placed => placed.id !== id)
+    };
 
     _currentPuzzle$.next(puzzle);
 }

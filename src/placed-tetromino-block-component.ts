@@ -20,7 +20,7 @@ export const PlacedTetrominoBlockComponent = defineComponent({
             .subscribe(value => placedTetrominoBlock.value = value);
 
         onUnmounted(() => subscription.unsubscribe());
-		return { placedTetrominoBlock };
+		return { placedTetrominoBlock, id: props.id };
 	},
 	render
 });

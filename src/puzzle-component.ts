@@ -1,7 +1,7 @@
 import { Ref, ref, defineComponent } from "vue";
 import { render } from "./puzzle-component.template";
 import { Puzzle } from "./puzzle";
-import { getCurrentPuzzle, currentPuzzle$, setCandidate, placeCandidate } from "./current-puzzle";
+import { getCurrentPuzzle, currentPuzzle$, setCandidate, placeCandidate, clearCandidate, clearPlaced } from "./current-puzzle";
 import { PlacedTetrominoBlockComponent } from "./placed-tetromino-block-component";
 import { Tetromino } from "./tetromino";
 import { getUnplacedHandTetromino } from "./get-unplaced-hand-tetrominos";
@@ -15,6 +15,7 @@ import { mouseClicks$ } from "./mouse-clicks";
 import { getCandidate } from "./get-candidate";
 import { getHandTetrominoBlock } from "./get-hand-tetromino-block";
 import { getPlacedTetrominoBlock } from "./get-placed-tetromino-block";
+import { mouseRightClicks$ } from "./mouse-right-clicks";
 
 mousePosition$.subscribe(function(position: Block) {
 	const candidate = getCandidate();
@@ -60,6 +61,29 @@ mouseClicks$.subscribe(function(position: Block) {
 			setCandidate(clickOnHandTetromino.id, position);
 		} else if (clickOnPlacedTetromino) {
 			setCandidate(clickOnPlacedTetromino.id, position);
+		}
+	}
+});
+
+mouseRightClicks$.subscribe(function(position: Block) {
+	const candidate = getCandidate();
+
+	if (candidate) {
+		clearCandidate();
+	} else {
+		const clickOnPlacedTetromino = getCurrentPuzzle().placed.find(tetromino => {
+			const placedBlocks = [
+				getPlacedTetrominoBlock(tetromino.id, 0),
+				getPlacedTetrominoBlock(tetromino.id, 1),
+				getPlacedTetrominoBlock(tetromino.id, 2),
+				getPlacedTetrominoBlock(tetromino.id, 3),
+			];
+
+			return placedBlocks.some(block => block.x === position.x && block.y === position.y);
+		});
+
+		if (clickOnPlacedTetromino) {
+			clearPlaced(clickOnPlacedTetromino.id);
 		}
 	}
 });

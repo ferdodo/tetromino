@@ -15,7 +15,7 @@ export const HandTetrominoBlockComponent = defineComponent({
     },
 	setup(props: { id: number, handIndex: number, blockIndex: number }) {
         const handTetrominoBlock: Ref<Block> = ref(getHandTetrominoBlock(props.id, props.handIndex, props.blockIndex));
-		return { handTetrominoBlock };
+		return { handTetrominoBlock, id: props.id };
 	},
 	render
 });
