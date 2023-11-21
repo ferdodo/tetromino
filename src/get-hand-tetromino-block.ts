@@ -14,8 +14,8 @@ export function getHandTetrominoBlock(id: number, handIndex: number, blockIndex:
     const block: Block = tetromino.blocks[blockIndex];
 
     return {
-        x: block.x + ((handIndex * 5) % 10) + puzzle.handZone.x,
-        y: block.y + (Math.floor(handIndex / 2) * 5) + puzzle.handZone.y,
+        x: block.x + ((handIndex * 5) % 15) + puzzle.handZone.x,
+        y: block.y + (Math.floor(handIndex / 3) * 5) + puzzle.handZone.y,
         h: 1,
         w: 1
     }

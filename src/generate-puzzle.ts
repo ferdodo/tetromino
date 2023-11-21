@@ -6,36 +6,43 @@ import { Tetromino } from "./tetromino";
 import { Block, isBlockIncluding } from "blockwise";
 
 export function generatePuzzle(): Puzzle {
+	const format = randomNumber(0, 20);
+
+	let width = 4;
+
+	switch(format) {
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+			width = 6;
+			break;
+		case 20:
+			width = 8;
+	}
+	
+
     let puzzle: Puzzle = {
         gameZone: {
             x: 0,
             y: 0,
-            w: 20,
-            h: 25
+            w: 12 + 3 + 15,
+            h: 20
         },
         successZone: {
-            x: 2,
+            x: 0,
             y: 2,
-            w: 6,
+            w: width,
             h: 6
         },
         handZone: {
-            x: 10,
+            x: width + 3,
             y: 0,
-            w: 10,
-            h: 25
+            w: 15,
+            h: 20
         },
-        hand: [
-            generateTetromino(),
-            generateTetromino(),
-            generateTetromino(),
-            generateTetromino(),
-            generateTetromino(),
-            generateTetromino(),
-            generateTetromino(),
-            generateTetromino(),
-            generateTetromino()
-        ],
+        hand: [...Array((width * 6) / 4).keys()].map(generateTetromino),
         candidate: null,
         placed: []
     };

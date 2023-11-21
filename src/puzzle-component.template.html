@@ -1,6 +1,6 @@
 <div style="display: grid; place-content:center">
-	<div class="game-zone" :style="`width: clamp(10rem, 80vw, 40rem); height: clamp(12rem, 100vw, 50rem); display: grid; grid-template-columns: repeat(${ puzzle.gameZone.w }, 1fr); grid-template-rows: repeat(${ puzzle.gameZone.h }, 1fr);`">
-		<div class="success-zone" :style="`grid-area: ${puzzle.successZone.x+1}/${puzzle.successZone.y+1}/${puzzle.successZone.x+puzzle.successZone.w+1}/${puzzle.successZone.h+puzzle.successZone.y+1}`"></div>
+	<div class="game-zone" :style="`width: clamp(10rem, 80vw, 100rem); height: clamp(6.6rem, 53vw, 66rem); display: grid; grid-template-columns: repeat(${ puzzle.gameZone.w }, 1fr); grid-template-rows: repeat(${ puzzle.gameZone.h }, 1fr);`">
+		<div class="success-zone" :style="`grid-area: ${puzzle.successZone.y+1}/${puzzle.successZone.x+1}/${puzzle.successZone.y+puzzle.successZone.h+1}/${puzzle.successZone.w+puzzle.successZone.x+1}`"></div>
 		<div class="hand-zone" :style="`grid-area: ${puzzle.handZone.y+1}/${puzzle.handZone.x+1}/${puzzle.handZone.y+puzzle.handZone.h+1}/${puzzle.handZone.w+puzzle.handZone.x+1}`"></div>
 		
 		<template v-for="(placedTetromino, index) of puzzle.placed" :key="`${placedTetromino.id} ${index}`">

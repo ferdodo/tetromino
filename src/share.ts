@@ -1,4 +1,4 @@
-import { getMoveCount } from "./current-puzzle";
+import { getMoveCount, getCurrentPuzzle } from "./current-puzzle";
 
 export function share() {
     const date = new Date();
@@ -8,8 +8,24 @@ export function share() {
     const formattedDate = `${year}/${month}/${day}`;
     let text = `Tetromino ${formattedDate}`;
 
-    text += `\n\nPuzzle réussi avec ${ getMoveCount() } positionnements.`;
+    text += `\n\nPuzzle réussi (${ getPuzzleSize() } pièces) avec ${ getMoveCount() } positionnements.`;
 
     text += `\n\nhttps://ferdodo.github.io/tetromino`;
     navigator.clipboard.writeText(text);
+}
+
+
+function getPuzzleSize(): number {
+	const puzzle = getCurrentPuzzle();
+
+	switch(puzzle.successZone.w) {
+		case 4:
+			return 6;
+		case 6:
+			return 9;
+		case 8:
+			return 12;
+		default:
+			throw new Error("Unexpected successZone width !");
+	}
 }
