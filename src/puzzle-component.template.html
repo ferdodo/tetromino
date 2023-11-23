@@ -21,7 +21,7 @@
 
 		<template v-for="x in puzzle.gameZone.w">
 			<template v-for="y in puzzle.gameZone.h">
-				<mouse-detection-component :x="x" :y="y"></mouse-detection-component>
+				<mouse-detection-component :x="x" :y="y" style="z-index: 2;"></mouse-detection-component>
 			</template>
 		</template>
 	</div>

@@ -10,11 +10,13 @@ export const TetrominoBlockComponent = defineComponent({
     	id: {
     		required: true,
     		type: Number
-    	}
+    	},
+    	moving: Boolean
     },
 	setup(props) {
 		const color = getColor(props.id);
-		return { color };
+		const moving = Boolean(props.moving);
+		return { color, moving };
 	},
 	render
 });
