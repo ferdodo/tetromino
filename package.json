@@ -3,9 +3,13 @@
         "build": "zx ./scripts/build.mjs"
     },
     "devDependencies": {
+        "@types/react": "^19.1.0",
+        "@types/react-dom": "^19.1.1",
         "blockwise": "^1.2.0",
         "cookies-ds": "^1.2.0",
         "esbuild": "^0.19.6",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
         "rxjs": "^7.8.1",
         "seedrandom": "^3.0.5",
         "shelljs": "^0.8.5",
