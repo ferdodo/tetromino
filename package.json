@@ -1,22 +1,18 @@
 {
-    "scripts": {
-        "build": "zx ./scripts/build.mjs"
-    },
-    "devDependencies": {
-        "@types/react": "^19.1.0",
-        "@types/react-dom": "^19.1.1",
-        "blockwise": "^1.2.0",
-        "cookies-ds": "^1.2.0",
-        "esbuild": "^0.19.6",
-        "react": "^19.1.0",
-        "react-dom": "^19.1.0",
-        "rxjs": "^7.8.1",
-        "seedrandom": "^3.0.5",
-        "shelljs": "^0.8.5",
-        "typescript": "^5.2.2",
-        "vue": "^3.3.8",
-        "vue-compiler-dom-cli": "^0.2.2",
-        "zx": "^7.2.3",
-        "zx-run-task": "^1.0.2"
-    }
+	"scripts": {
+		"build": "tsc && vite build"
+	},
+	"devDependencies": {
+		"@types/react": "^19.1.0",
+		"@types/react-dom": "^19.1.1",
+		"blockwise": "^1.2.0",
+		"cookies-ds": "^1.2.0",
+		"esbuild": "^0.19.6",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"rxjs": "^7.8.1",
+		"seedrandom": "^3.0.5",
+		"typescript": "^5.2.2",
+		"vite": "^6.2.5"
+	}
 }

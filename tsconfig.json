@@ -8,6 +8,8 @@
 		"skipLibCheck": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"target": "ES6"
+		"jsx": "react-jsx",
+		"target": "ES6",
+		"lib": ["DOM", "DOM.Iterable", "ES2019"]
 	}
 }
