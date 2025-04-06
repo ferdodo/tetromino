@@ -1,26 +1,26 @@
 body {
-    background-color: rgb(61, 126, 195);
+	background-color: rgb(61, 126, 195);
 }
 
 div {
-    user-select: none;
+	user-select: none;
 }
 
 .success-zone {
-    border: 1px solid black;
-    border: 2px solid #000000bd;
-    border-radius: 0.2rem;
-    z-index: 1;
+	border: 1px solid black;
+	border: 2px solid #000000bd;
+	border-radius: 0.2rem;
+	z-index: 1;
 }
 
 .tetromino-block {
-    border: .5vw solid black;
-    height: 100%;
-    border-top-color: rgba(255,255,255, 0.35);
-    border-bottom-color: rgba(0,0,0, 0.35);
-    border-left-color: rgba(0,0,0, 0.10);
-    border-right-color: rgba(0,0,0, 0.10);
-    box-sizing: border-box;
+	border: .5vw solid black;
+	height: 100%;
+	border-top-color: rgba(255, 255, 255, 0.35);
+	border-bottom-color: rgba(0, 0, 0, 0.35);
+	border-left-color: rgba(0, 0, 0, 0.1);
+	border-right-color: rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
 }
 
 .tetromino-block.moving {
