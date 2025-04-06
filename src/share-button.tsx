@@ -1,6 +1,5 @@
 import type React from "react";
 import { share } from "./share";
-import "cookies-ds";
 
 export function ShareButton() {
 	const handleClick = () => {
@@ -14,13 +13,13 @@ export function ShareButton() {
 	};
 
 	return (
-		<cookies-button
+		<crumbs-button
 			onClick={handleClick}
 			onKeyDown={handleKeyDown}
 			title="Copier dans le presse-papier"
 			confetti="true"
 		>
 			Partager
-		</cookies-button>
+		</crumbs-button>
 	);
 }

@@ -3,25 +3,25 @@ import ReactDOM from "react-dom/client";
 import { PuzzleComponent } from "./puzzle-component";
 import { win$ } from "./win";
 import { getMoveCount } from "./current-puzzle";
-import "cookies-ds";
+import "crumbs-design-system";
 import { ShareButton } from "./share-button";
 
 declare module "react" {
 	namespace JSX {
 		interface IntrinsicElements {
-			"cookies-panel": React.DetailedHTMLProps<
+			"crumbs-panel": React.DetailedHTMLProps<
 				React.HTMLAttributes<HTMLElement>,
 				HTMLElement
 			>;
-			"cookies-h1": React.DetailedHTMLProps<
+			"crumbs-h1": React.DetailedHTMLProps<
 				React.HTMLAttributes<HTMLElement>,
 				HTMLElement
 			>;
-			"cookies-p": React.DetailedHTMLProps<
+			"crumbs-p": React.DetailedHTMLProps<
 				React.HTMLAttributes<HTMLElement>,
 				HTMLElement
 			>;
-			"cookies-button": React.DetailedHTMLProps<
+			"crumbs-button": React.DetailedHTMLProps<
 				React.ButtonHTMLAttributes<HTMLElement> & { confetti?: string },
 				HTMLElement
 			>;
@@ -51,22 +51,22 @@ function App() {
 	}, []);
 
 	return (
-		<cookies-panel>
-			<cookies-h1>Tetromino</cookies-h1>
+		<crumbs-panel>
+			<crumbs-h1>Tetromino</crumbs-h1>
 
-			<cookies-p>Placez tout les tetrominos dans la zone de jeu.</cookies-p>
+			<crumbs-p>Placez tout les tetrominos dans la zone de jeu.</crumbs-p>
 
 			<PuzzleComponent />
 
 			{win && (
 				<div>
-					<cookies-p style={{ textAlign: "center" }}>
+					<crumbs-p style={{ textAlign: "center" }}>
 						🎉 C'est gagné pour aujourd'hui ! 🥳 <br />
 						<ShareButton />
-					</cookies-p>
+					</crumbs-p>
 				</div>
 			)}
-		</cookies-panel>
+		</crumbs-panel>
 	);
 }
 
