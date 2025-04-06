@@ -70,7 +70,6 @@ function App() {
 	);
 }
 
-// Modification du HTML pour ajouter un élément racine
 document.body.innerHTML = `<div id="root"></div>${document.body.innerHTML}`;
 
 const root = ReactDOM.createRoot(

@@ -41,12 +41,10 @@ export function MouseDetectionComponent({
 	};
 
 	const handleFocus = () => {
-		// Même comportement que handleHover pour l'accessibilité
 		handleHover();
 	};
 
 	const handleKeyPress = (e: React.KeyboardEvent) => {
-		// Activer le clic sur Entrée ou Espace pour l'accessibilité
 		if (e.key === "Enter" || e.key === " ") {
 			handleClick();
 		}

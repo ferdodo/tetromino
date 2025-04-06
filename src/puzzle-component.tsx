@@ -25,7 +25,6 @@ import { getPlacedTetrominoBlock } from "./get-placed-tetromino-block";
 import { mouseRightClicks$ } from "./mouse-right-clicks";
 import { PlacedTetrominoBlockComponent } from "./placed-tetromino-block-component";
 
-// Garder les souscriptions à la racine comme dans le composant Vue original
 mousePosition$.subscribe((position: Block) => {
 	const candidate = getCandidate();
 

@@ -101,7 +101,6 @@ function randomPlacing(puzzle: Puzzle): Puzzle {
 	return newPuzzle;
 }
 
-// how many blocks in the success zone are covered by placed tetrominos
 function calculateSuccessZoneCoverage(puzzle: Puzzle): number {
 	const placed: Block[] = puzzle.placed.flatMap((placed: PlacedTetromino) => {
 		const tetromino = puzzle.hand.find((tetromino: Tetromino) => {
