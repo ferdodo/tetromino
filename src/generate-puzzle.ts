@@ -1,9 +1,9 @@
 import { generateId } from "./generate-id";
-import { PlacedTetromino } from "./placed-tetromino";
-import { Puzzle } from "./puzzle";
+import type { PlacedTetromino } from "./placed-tetromino";
+import type { Puzzle } from "./puzzle";
 import { randomNumber } from "./random-number";
-import { Tetromino } from "./tetromino";
-import { Block, isBlockIncluding } from "blockwise";
+import type { Tetromino } from "./tetromino";
+import { type Block, isBlockIncluding } from "blockwise";
 
 export function generatePuzzle(): Puzzle {
 	const format = randomNumber(0, 20);
@@ -131,7 +131,7 @@ function isTetrominoWithinBounds(
 	tetromino: Tetromino,
 	placement: Block,
 ): boolean {
-	return tetromino.blocks.every(function (block) {
+	return tetromino.blocks.every((block) => {
 		return isBlockIncluding(puzzle.successZone, {
 			x: block.x + placement.x,
 			y: block.y + placement.y,

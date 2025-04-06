@@ -1,10 +1,6 @@
-import { Block } from "blockwise";
+import type { Block } from "blockwise";
 
 export interface PlacedTetromino {
-    id: number,
-    block: Block    
+	id: number;
+	block: Block;
 }
-
-
-
-

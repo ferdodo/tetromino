@@ -1,8 +1,9 @@
 {
 	"scripts": {
-		"build": "tsc && vite build"
+		"build": "tsc && biome ci . --organize-imports-enabled=false && vite build"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
 		"@types/react": "^19.1.0",
 		"@types/react-dom": "^19.1.1",
 		"blockwise": "^1.2.0",

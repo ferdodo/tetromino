@@ -1,7 +1,7 @@
-import { Block } from "blockwise";
+import type { Block } from "blockwise";
 
 export interface Tetromino {
-    id: number,
-    color: string,
-    blocks: Block[]
+	id: number;
+	color: string;
+	blocks: Block[];
 }

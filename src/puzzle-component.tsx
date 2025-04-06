@@ -146,14 +146,14 @@ export function PuzzleComponent() {
 					style={{
 						gridArea: `${puzzle.successZone.y + 1}/${puzzle.successZone.x + 1}/${puzzle.successZone.y + puzzle.successZone.h + 1}/${puzzle.successZone.w + puzzle.successZone.x + 1}`,
 					}}
-				></div>
+				/>
 
 				<div
 					className="hand-zone"
 					style={{
 						gridArea: `${puzzle.handZone.y + 1}/${puzzle.handZone.x + 1}/${puzzle.handZone.y + puzzle.handZone.h + 1}/${puzzle.handZone.w + puzzle.handZone.x + 1}`,
 					}}
-				></div>
+				/>
 
 				{/* Tetrominos placés */}
 				{puzzle.placed.map((placedTetromino, index) => (

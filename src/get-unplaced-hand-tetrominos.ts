@@ -1,10 +1,10 @@
 import { getCurrentPuzzle } from "./current-puzzle";
-import { Tetromino } from "./tetromino";
+import type { Tetromino } from "./tetromino";
 
 export function getUnplacedHandTetromino(): Tetromino[] {
-    const puzzle = getCurrentPuzzle();
+	const puzzle = getCurrentPuzzle();
 
-    return puzzle.hand.filter(function(t: Tetromino) {
-        return !puzzle.placed.map(({ id }) => id).includes(t.id);
-    });
+	return puzzle.hand.filter((t: Tetromino) => {
+		return !puzzle.placed.map(({ id }) => id).includes(t.id);
+	});
 }

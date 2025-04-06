@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { PuzzleComponent } from "./puzzle-component";
 import { win$ } from "./win";
-import { share } from "./share";
 import { getMoveCount } from "./current-puzzle";
 import "cookies-ds";
+import { ShareButton } from "./share-button";
 
-// Déclaration pour TypeScript des éléments personnalisés
 declare module "react" {
 	namespace JSX {
 		interface IntrinsicElements {
@@ -30,7 +29,7 @@ declare module "react" {
 	}
 }
 
-const App: React.FC = () => {
+function App() {
 	const [win, setWin] = useState<boolean>(false);
 
 	useEffect(() => {
@@ -63,22 +62,16 @@ const App: React.FC = () => {
 				<div>
 					<cookies-p style={{ textAlign: "center" }}>
 						🎉 C'est gagné pour aujourd'hui ! 🥳 <br />
-						<cookies-button
-							onClick={share}
-							title="Copier dans le presse-papier"
-							confetti="true"
-						>
-							Partager
-						</cookies-button>
+						<ShareButton />
 					</cookies-p>
 				</div>
 			)}
 		</cookies-panel>
 	);
-};
+}
 
 // Modification du HTML pour ajouter un élément racine
-document.body.innerHTML = '<div id="root"></div>' + document.body.innerHTML;
+document.body.innerHTML = `<div id="root"></div>${document.body.innerHTML}`;
 
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement,

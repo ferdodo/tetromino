@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import type { Block } from "blockwise";
 import { getHandTetrominoBlock } from "./get-hand-tetromino-block";
 import { TetrominoBlockComponent } from "./tetromino-block-component";
