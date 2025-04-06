@@ -1,5 +1,5 @@
 import type React from "react";
-import { share } from "./share";
+import { share } from "../share";
 
 export function ShareButton() {
 	const handleClick = () => {

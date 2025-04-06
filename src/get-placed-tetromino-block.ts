@@ -1,5 +1,5 @@
-import type { PlacedTetromino } from "./placed-tetromino";
-import type { Tetromino } from "./tetromino";
+import type { PlacedTetromino } from "./types/placed-tetromino";
+import type { Tetromino } from "./types/tetromino";
 import { getTetromino } from "./get-tetromino";
 import { getPlacedTetromino } from "./get-placed-tetromino";
 import type { Block } from "blockwise";

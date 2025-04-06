@@ -1,8 +1,8 @@
-import type { Puzzle } from "./puzzle";
+import type { Puzzle } from "./types/puzzle";
 import { generatePuzzle } from "./generate-puzzle";
 import { Subject } from "rxjs";
 import type { Block } from "blockwise";
-import type { PlacedTetromino } from "./placed-tetromino";
+import type { PlacedTetromino } from "./types/placed-tetromino";
 import { isPlacementLegal } from "./is-placement-legal";
 
 let puzzle = generatePuzzle();

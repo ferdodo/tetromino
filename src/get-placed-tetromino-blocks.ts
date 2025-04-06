@@ -1,7 +1,7 @@
 import { getCurrentPuzzle } from "./current-puzzle";
 import type { Block } from "blockwise";
-import type { Tetromino } from "./tetromino";
-import type { PlacedTetromino } from "./placed-tetromino";
+import type { Tetromino } from "./types/tetromino";
+import type { PlacedTetromino } from "./types/placed-tetromino";
 
 export function getPlacedTetrominoBlocks(): Block[] {
 	const puzzle = getCurrentPuzzle();

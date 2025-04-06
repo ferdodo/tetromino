@@ -1,5 +1,5 @@
 import type React from "react";
-import { getColor } from "./get-color";
+import { getColor } from "../get-color";
 
 interface TetrominoBlockProps {
 	id: number;

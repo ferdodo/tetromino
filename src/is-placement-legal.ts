@@ -1,7 +1,7 @@
 import { type Block, isBlockColliding, isBlockIncluding } from "blockwise";
 import { getPlacedTetrominoBlocks } from "./get-placed-tetromino-blocks";
 import { getCurrentPuzzle } from "./current-puzzle";
-import type { Puzzle } from "./puzzle";
+import type { Puzzle } from "./types/puzzle";
 import { getCandidateTetrominoBlocks } from "./get-candidate-tetromino-blocks";
 
 export function isPlacementLegal(): boolean {

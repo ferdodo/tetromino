@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import { PuzzleComponent } from "./puzzle-component";
+import { PuzzleComponent } from "./components/puzzle-component";
 import { win$ } from "./win";
 import { getMoveCount } from "./current-puzzle";
 import "crumbs-design-system";
-import { ShareButton } from "./share-button";
+import { ShareButton } from "./components/share-button";
 
 declare module "react" {
 	namespace JSX {

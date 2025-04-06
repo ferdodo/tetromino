@@ -1,10 +1,10 @@
 import type { Block } from "blockwise";
-import type { PlacedTetromino } from "./placed-tetromino";
+import type { PlacedTetromino } from "../types/placed-tetromino";
 import { useState, useEffect } from "react";
-import { getCandidate } from "./get-candidate";
-import { observeCandidate } from "./observe-candidate";
-import { getCandidateTetrominoBlocks } from "./get-candidate-tetromino-blocks";
-import { observeCandidateTetrominoBlocks } from "./observe-candicate-tetromino-blocks";
+import { getCandidate } from "../get-candidate";
+import { observeCandidate } from "../observe-candidate";
+import { getCandidateTetrominoBlocks } from "../get-candidate-tetromino-blocks";
+import { observeCandidateTetrominoBlocks } from "../observe-candicate-tetromino-blocks";
 import { TetrominoBlockComponent } from "./tetromino-block-component";
 
 export function CandidateComponent() {

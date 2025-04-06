@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import type { Puzzle } from "./puzzle";
+import type { Puzzle } from "../types/puzzle";
 
 import {
 	getCurrentPuzzle,
@@ -8,21 +8,21 @@ import {
 	placeCandidate,
 	clearCandidate,
 	clearPlaced,
-} from "./current-puzzle";
+} from "../current-puzzle";
 
-import type { Tetromino } from "./tetromino";
-import { getUnplacedHandTetromino } from "./get-unplaced-hand-tetrominos";
-import { observeUnplacedHandTetromino } from "./observe-unplaced-hand-tetrominos";
+import type { Tetromino } from "../types/tetromino";
+import { getUnplacedHandTetromino } from "../get-unplaced-hand-tetrominos";
+import { observeUnplacedHandTetromino } from "../observe-unplaced-hand-tetrominos";
 import { HandTetrominoBlockComponent } from "./hand-tetromino-block-component";
 import { MouseDetectionComponent } from "./mouse-detection-component";
 import { CandidateComponent } from "./candidate-component";
-import { mousePosition$ } from "./mouse-position";
+import { mousePosition$ } from "../mouse-position";
 import type { Block } from "blockwise";
-import { mouseClicks$ } from "./mouse-clicks";
-import { getCandidate } from "./get-candidate";
-import { getHandTetrominoBlock } from "./get-hand-tetromino-block";
-import { getPlacedTetrominoBlock } from "./get-placed-tetromino-block";
-import { mouseRightClicks$ } from "./mouse-right-clicks";
+import { mouseClicks$ } from "../mouse-clicks";
+import { getCandidate } from "../get-candidate";
+import { getHandTetrominoBlock } from "../get-hand-tetromino-block";
+import { getPlacedTetrominoBlock } from "../get-placed-tetromino-block";
+import { mouseRightClicks$ } from "../mouse-right-clicks";
 import { PlacedTetrominoBlockComponent } from "./placed-tetromino-block-component";
 
 mousePosition$.subscribe((position: Block) => {

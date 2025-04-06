@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import type { Block } from "blockwise";
-import { getPlacedTetrominoBlock } from "./get-placed-tetromino-block";
-import { observePlacedTetrominoBlock } from "./observe-placed-tetromino-block";
+import { getPlacedTetrominoBlock } from "../get-placed-tetromino-block";
+import { observePlacedTetrominoBlock } from "../observe-placed-tetromino-block";
 import { TetrominoBlockComponent } from "./tetromino-block-component";
 
 interface PlacedTetrominoBlockComponentProps {

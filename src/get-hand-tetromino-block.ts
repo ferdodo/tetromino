@@ -1,6 +1,6 @@
 import { getCurrentPuzzle } from "./current-puzzle";
-import type { Puzzle } from "./puzzle";
-import type { Tetromino } from "./tetromino";
+import type { Puzzle } from "./types/puzzle";
+import type { Tetromino } from "./types/tetromino";
 import type { Block } from "blockwise";
 
 export function getHandTetrominoBlock(

@@ -1,6 +1,6 @@
 import { getCurrentPuzzle } from "./current-puzzle";
 import { getTetromino } from "./get-tetromino";
-import type { PlacedTetromino } from "./placed-tetromino";
+import type { PlacedTetromino } from "./types/placed-tetromino";
 import type { Block } from "blockwise";
 
 export function getCandidateTetrominoBlocks(): Block[] | null {

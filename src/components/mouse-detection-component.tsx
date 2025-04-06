@@ -1,7 +1,7 @@
 import type React from "react";
-import { setMousePosition } from "./mouse-position";
-import { emitMouseClick } from "./mouse-clicks";
-import { emitMouseRightClick } from "./mouse-right-clicks";
+import { setMousePosition } from "../mouse-position";
+import { emitMouseClick } from "../mouse-clicks";
+import { emitMouseRightClick } from "../mouse-right-clicks";
 
 interface MouseDetectionComponentProps {
 	x: number;

@@ -2,8 +2,8 @@ import type { Block } from "blockwise";
 import { map, type Observable, filter } from "rxjs";
 import { currentPuzzle$ } from "./current-puzzle";
 import { getPlacedTetrominoBlock } from "./get-placed-tetromino-block";
-import type { PlacedTetromino } from "./placed-tetromino";
-import type { Puzzle } from "./puzzle";
+import type { PlacedTetromino } from "./types/placed-tetromino";
+import type { Puzzle } from "./types/puzzle";
 
 export function observePlacedTetrominoBlock(
 	id: number,

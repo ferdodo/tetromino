@@ -1,5 +1,5 @@
 import { getCurrentPuzzle } from "./current-puzzle";
-import type { Tetromino } from "./tetromino";
+import type { Tetromino } from "./types/tetromino";
 
 export function getUnplacedHandTetromino(): Tetromino[] {
 	const puzzle = getCurrentPuzzle();

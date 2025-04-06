@@ -1,8 +1,8 @@
 import { generateId } from "./generate-id";
-import type { PlacedTetromino } from "./placed-tetromino";
-import type { Puzzle } from "./puzzle";
+import type { PlacedTetromino } from "./types/placed-tetromino";
+import type { Puzzle } from "./types/puzzle";
 import { randomNumber } from "./random-number";
-import type { Tetromino } from "./tetromino";
+import type { Tetromino } from "./types/tetromino";
 import { type Block, isBlockIncluding } from "blockwise";
 
 export function generatePuzzle(): Puzzle {

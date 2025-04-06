@@ -1,4 +1,4 @@
-import type { PlacedTetromino } from "./placed-tetromino";
+import type { PlacedTetromino } from "./types/placed-tetromino";
 import { getCurrentPuzzle } from "./current-puzzle";
 
 export function getPlacedTetromino(id: number): PlacedTetromino {
